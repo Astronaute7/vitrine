@@ -113,9 +113,9 @@
                 <div>
                     <h4 class="font-semibold mb-4">Contact</h4>
                     <ul class="space-y-2 text-gray-400">
-                        <li><i class="fas fa-phone mr-2"></i> +33 1 23 45 67 89</li>
+                        <li><i class="fas fa-phone mr-2"></i> 00228 98 91 48 95</li>
                         <li><i class="fas fa-envelope mr-2"></i> contact@association.org</li>
-                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Rue de la Solidarité, Paris</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> 123 Rue des Chamerops Lome, Adewii TOGO</li>
                     </ul>
                 </div>
             </div>

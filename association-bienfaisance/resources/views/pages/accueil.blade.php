@@ -8,7 +8,7 @@
 <section class="hero-gradient text-white py-20">
     <div class="max-w-7xl mx-auto px-4 text-center">
         <h1 class="text-5xl md:text-6xl font-bold mb-6">
-            Ensemble, faisons la différence
+            Ensemble, faisons la différence 
         </h1>
         <p class="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
             Rejoignez-nous dans notre mission d'aide aux personnes dans le besoin
