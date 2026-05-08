@@ -8,44 +8,64 @@
             font-family: Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
         }
         .container {
             max-width: 600px;
             margin: 0 auto;
-            padding: 20px;
-            background: #f9f9f9;
+            background: #ffffff;
             border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            overflow: hidden;
         }
         .header {
             background: #dc2626;
             color: white;
             padding: 20px;
             text-align: center;
-            border-radius: 10px 10px 0 0;
+        }
+        .header h2 {
+            margin: 0;
+            font-size: 24px;
+        }
+        .header p {
+            margin: 5px 0 0;
+            opacity: 0.9;
         }
         .content {
-            background: white;
-            padding: 20px;
-            border-radius: 0 0 10px 10px;
+            padding: 30px;
         }
         .field {
-            margin-bottom: 15px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
         }
         .label {
             font-weight: bold;
             color: #dc2626;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .value {
+            color: #555;
+            margin: 0;
         }
         .message-box {
-            background: #f0f0f0;
+            background: #f9f9f9;
             padding: 15px;
             border-radius: 5px;
             margin-top: 10px;
+            border-left: 4px solid #dc2626;
         }
         .footer {
+            background: #f4f4f4;
+            padding: 15px;
             text-align: center;
-            margin-top: 20px;
             font-size: 12px;
-            color: #666;
+            color: #777;
+            border-top: 1px solid #ddd;
         }
     </style>
 </head>
@@ -58,22 +78,22 @@
         
         <div class="content">
             <div class="field">
-                <span class="label">👤 Nom :</span>
-                <p>{{ $data['nom'] }}</p>
+                <span class="label">👤 Nom complet</span>
+                <p class="value">{{ $data['nom'] }}</p>
             </div>
             
             <div class="field">
-                <span class="label">📧 Email :</span>
-                <p>{{ $data['email'] }}</p>
+                <span class="label">📧 Adresse email</span>
+                <p class="value">{{ $data['email'] }}</p>
             </div>
             
             <div class="field">
-                <span class="label">📞 Téléphone :</span>
-                <p>{{ $data['telephone'] }}</p>
+                <span class="label">📞 Numéro de téléphone</span>
+                <p class="value">{{ $data['telephone'] }}</p>
             </div>
             
             <div class="field">
-                <span class="label">💬 Message :</span>
+                <span class="label">💬 Message</span>
                 <div class="message-box">
                     {{ nl2br(e($data['message'])) }}
                 </div>
@@ -82,7 +102,7 @@
         
         <div class="footer">
             <p>Cet email a été envoyé depuis le formulaire de contact de votre site.</p>
-            <p>Répondez directement à cet email pour contacter {{ $data['nom'] }}</p>
+            <p>Répondez à {{ $data['email'] }} pour contacter {{ $data['nom'] }}</p>
         </div>
     </div>
 </body>

@@ -20,7 +20,13 @@
                 <p class="font-semibold">✓ {{ session('success') }}</p>
             </div>
         @endif
-        
+
+	@if(session('error'))
+	    <div class="bg-red-100 border-l-4 border-red-500 text-red-700 p-4 mb-8 rounded">
+		<p class="font-semibold">⚠️ {{ session('error') }}</p>
+	    </div>
+	@endif
+
         <div class="grid md:grid-cols-2 gap-12">
             <!-- Informations de contact -->
             <div>
@@ -30,7 +36,7 @@
                         <i class="fas fa-map-marker-alt text-red-600 text-2xl mt-1"></i>
                         <div>
                             <h3 class="font-semibold text-lg">Adresse</h3>
-                            <p class="text-gray-600">123 Rue de la Solidarité<br>75001 Paris, France</p>
+                            <p class="text-gray-600">123 Rue des Chamerops <br>Lome, Adewii TOGO</p>
                         </div>
                     </div>
                     
@@ -38,7 +44,7 @@
                         <i class="fas fa-phone text-red-600 text-2xl mt-1"></i>
                         <div>
                             <h3 class="font-semibold text-lg">Téléphone</h3>
-                            <p class="text-gray-600">+33 1 23 45 67 89</p>
+                            <p class="text-gray-600">+228 98 91 48 95</p>
                         </div>
                     </div>
                     
@@ -46,7 +52,7 @@
                         <i class="fas fa-envelope text-red-600 text-2xl mt-1"></i>
                         <div>
                             <h3 class="font-semibold text-lg">Email</h3>
-                            <p class="text-gray-600">contact@association.org</p>
+                            <p class="text-gray-600">association@email.com</p>
                         </div>
                     </div>
                     
@@ -61,8 +67,8 @@
                 
                 <div class="mt-8 p-6 bg-red-50 rounded-lg">
                     <h3 class="font-bold text-lg mb-2">Besoin d'aide immédiate ?</h3>
-                    <p class="text-gray-700">Notae ligne d'écoute est disponible 24h/24 et 7j/7</p>
-                    <p class="text-2xl font-bold text-red-600 mt-3">0800 123 456</p>
+                    <p class="text-gray-700">Notre ligne d'écoute est disponible 24h/24 et 6j/7</p>
+                    <p class="text-2xl font-bold text-red-600 mt-3">00228 98 91 48 95</p>
                     <p class="text-sm text-gray-500 mt-2">Appel gratuit</p>
                 </div>
             </div>
@@ -78,7 +84,7 @@
                         <label class="block text-gray-700 font-semibold mb-2">Nom complet *</label>
                         <input type="text" name="nom" value="{{ old('nom') }}" 
                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-red-600 @error('nom') border-red-500 @enderror"
-                               placeholder="Jean Dupont" required>
+                               placeholder="votre nom" required>
                         @error('nom') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
                     </div>
                     
@@ -86,7 +92,7 @@
                         <label class="block text-gray-700 font-semibold mb-2">Email *</label>
                         <input type="email" name="email" value="{{ old('email') }}" 
                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-red-600 @error('email') border-red-500 @enderror"
-                               placeholder="jean.dupont@email.com" required>
+                               placeholder="votre email" required>
                         @error('email') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
                     </div>
                     
@@ -94,7 +100,7 @@
                         <label class="block text-gray-700 font-semibold mb-2">Téléphone *</label>
                         <input type="tel" name="telephone" value="{{ old('telephone') }}" 
                                class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-red-600 @error('telephone') border-red-500 @enderror"
-                               placeholder="+33 6 12 34 56 78" required>
+                               placeholder="votre numero" required>
                         @error('telephone') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
                     </div>
                     
@@ -102,7 +108,7 @@
                         <label class="block text-gray-700 font-semibold mb-2">Message *</label>
                         <textarea name="message" rows="6" 
                                   class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:border-red-600 @error('message') border-red-500 @enderror"
-                                  placeholder="Décrivez votre demande..." required>{{ old('message') }}</textarea>
+                                  placeholder="Écrivez votre demande..." required>{{ old('message') }}</textarea>
                         @error('message') <p class="text-red-500 text-sm mt-1">{{ $message }}</p> @enderror
                     </div>
                     
